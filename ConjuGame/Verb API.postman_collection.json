@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "e416caf8-50ec-4b43-88f3-c4204fc0c416",
+		"name": "Verb API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10214571"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"drbcarvalho@gmail.com\",\n    \"name\": \"Daniel\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v0/users/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"drbcarvalho@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v0/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Verb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"verb\": \"habiter\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v0/verbs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"verbs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Random",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quantity\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v0/verbs/random",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"verbs",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Favorite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"verb\" : \"aller\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v0/verbs/favorites",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"verbs",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Favorite",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v0/verbs/favorites/6563bbb657fe326fd65e105d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"verbs",
+						"favorites",
+						"6563bbb657fe326fd65e105d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Favorites",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}v0/verbs/favorites/all",
+					"host": [
+						"{{baseUrl}}v0"
+					],
+					"path": [
+						"verbs",
+						"favorites",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Favorite",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v0/verbs/favorites/6563bd2057fe326fd65e105e",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v0",
+						"verbs",
+						"favorites",
+						"6563bd2057fe326fd65e105e"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://french-verbs-fall-2023-app-ramym.ondigitalocean.app/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImRyYmNhcnZhbGhvQGdtYWlsLmNvbSIsInVpZCI6IjY1NmI1Y2VhODRjNGIxZmU2Mzg0ZmNiMCIsImV4cCI6MTcwNDEyNzA1Mn0.U2vlK-3awPjO37nPsnEG1EoxXJM4zwFYxvhBrNWW1gA",
+			"type": "string"
+		}
+	]
+}
